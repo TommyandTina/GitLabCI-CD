@@ -1,5 +1,4 @@
 build_job:
-  stage: build
   script:
     - mkdir build
     - cd build
