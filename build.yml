@@ -7,3 +7,6 @@ build_job:
     - cd build
     - cmake .. -DJOB_ID=$CI_JOB_ID
     - make
+  artifacts:
+    paths:
+      - build/
