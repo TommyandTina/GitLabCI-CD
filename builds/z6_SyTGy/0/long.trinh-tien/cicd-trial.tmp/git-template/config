@@ -1,0 +1,6 @@
+[init]
+	defaultBranch = none
+[fetch]
+	recurseSubmodules = false
+[http "https://gitlab-scm.banvien.com.vn"]
+	sslCAInfo = /home/long.trinh-tien/httpcicd/cicd-trial/builds/z6_SyTGy/0/long.trinh-tien/cicd-trial.tmp/CI_SERVER_TLS_CA_FILE
