@@ -4,6 +4,8 @@ test:
     - mylongtag
   dependencies:
     - build_job
+  before_script:
+    - echo "Skipping Git checkout and submodule setup"
   script:
     - export BUILD_DIR="$CI_PROJECT_DIR/builds/$CI_PIPELINE_ID/$CI_JOB_ID/long.trinh-tien/cicd-trial/build"
     - $BUILD_DIR/bin/hello_world_1
