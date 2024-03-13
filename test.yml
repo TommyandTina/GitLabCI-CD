@@ -6,7 +6,7 @@ test:
     - build_job
   script:
     - export BUILD_DIR="$CI_PROJECT_DIR/builds/$CI_PIPELINE_ID/$CI_JOB_ID/long.trinh-tien/cicd-trial/build"
-    - $BUILD_DIR/bin/hello_world_1
-    - $BUILD_DIR/bin/hello_world_2
-    - $BUILD_DIR/bin/hello_world_3
+    - /home/long.trinh-tien/httpcicd/cicd-trial/builds/z6_SyTGy/0/long.trinh-tien/cicd-trial/build/bin/hello_world_1
+    - /home/long.trinh-tien/httpcicd/cicd-trial/builds/z6_SyTGy/0/long.trinh-tien/cicd-trial/build/bin/hello_world_2
+    - /home/long.trinh-tien/httpcicd/cicd-trial/builds/z6_SyTGy/0/long.trinh-tien/cicd-trial/build/bin/hello_world_3
   when: manual
