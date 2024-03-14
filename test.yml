@@ -21,17 +21,26 @@ test_hello_world1:
 
 
 test_hello_world2:
-  extends: 
-    - .test_template
-  variables:
-    EXE_DIR: "hello_world_2"
-    NAME_OF_FILE: $EXE_DIR
+  # extends: 
+  #   - .test_template
+  # variables:
+  #   EXE_DIR: "hello_world_2"
+  #   NAME_OF_FILE: $EXE_DIR
+  script:
+  - echo "Run a script that results in exit code 137. This job is allowed to fail."
+  - exit 137
+  allow_failure: true
+    # exit_codes: 137
 
 
 test_hello_world3:
-  extends: 
-    - .test_template
-  variables:
-    EXE_DIR: "hello_world_3"
-    NAME_OF_FILE: $EXE_DIR
+  # extends: 
+  #   - .test_template
+  # variables:
+  #   EXE_DIR: "hello_world_3"
+  #   NAME_OF_FILE: $EXE_DIR
+  script:
+  - echo "Run a script that results in exit code 137. This job is not allowed to fail."
+  - exit 137
+  allow_failure: false
 
