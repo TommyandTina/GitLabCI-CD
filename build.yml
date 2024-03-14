@@ -12,6 +12,11 @@
   artifacts:
     paths:
       - ${APP_DIR}/bin/
+  rules:
+  - if: '$CI_PIPELINE_SOURCE == "web"'
+    when: manual
+  - if: '$CI_PIPELINE_SOURCE == "push"'
+    when: never
 
 build_hello_world_1:
   <<: *build_template
