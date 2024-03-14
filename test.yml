@@ -3,8 +3,8 @@
   tags:
     - mylongtag
   script:
-    - export BUILD_DIR="$CI_PROJECT_DIR/${EXE_DIR}/"
-    - ${BUILD_DIR}bin/${NAME_OF_FILE}
+    - export BUILD_DIR="$CI_PROJECT_DIR/${EXE_DIR}"
+    - ${BUILD_DIR}/bin/${NAME_OF_FILE}
   # when: manual
 
 test_hello_world1:
@@ -12,11 +12,8 @@ test_hello_world1:
   variables:
     EXE_DIR: "hello_world_1"
     NAME_OF_FILE: $EXE_DIR
-  dependencies:
-    - build_hello_world_1
-    - build_hello_world_2
-    - build_hello_world_3
-  # needs:
-  #   - job: build_hello_world_1
-  #   - job: build_hello_world_2
-  #   - job: build_hello_world_3
+  # dependencies:
+  #   - build_hello_world_1
+  needs:
+    - job: build_hello_world_1
+
