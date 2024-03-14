@@ -1,4 +1,4 @@
-test_template:
+.test_template:
   stage: test
   tags:
     - mylongtag
@@ -11,7 +11,7 @@ test_template:
 
 test_hello_world1:
   extends:
-    - test_template
+    - .test_template
   variables:
     - EXE_DIR : "hello_world_1"
     - NAME_OF_FILE : EXE_DIR
