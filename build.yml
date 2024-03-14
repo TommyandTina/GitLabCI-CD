@@ -10,7 +10,7 @@
     - echo $APP_DIR
   artifacts:
     paths:
-      - $APP_DIR/bin
+      - $APP_DIR/bin/
 
 build_hello_world_1:
   <<: *build_template
@@ -23,7 +23,7 @@ build_hello_world_2:
     APP_DIR: "hello_world_2"
   artifacts:
     paths:
-      - $APP_DIR/bin
+      - $APP_DIR/bin/
       
 build_hello_world_3:
   <<: *build_template
