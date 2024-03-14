@@ -5,14 +5,13 @@
   # dependencies:
   #   - build_job
   script:
-    - export BUILD_DIR="$CI_PROJECT_DIR/$EXE_DIR/"
-    - $BUILD_DIR/bin/$NAME_OF_FILE
+    - export BUILD_DIR="$CI_PROJECT_DIR/${EXE_DIR}/"
+    - ${BUILD_DIR}bin/${NAME_OF_FILE}
   when: manual
 
 test_hello_world1:
   extends:
     - .test_template
   variables:
-    - EXE_DIR : "hello_world_1"
-    - NAME_OF_FILE : EXE_DIR
-
+    - EXE_DIR: "hello_world_1"
+    - NAME_OF_FILE: ${EXE_DIR}
