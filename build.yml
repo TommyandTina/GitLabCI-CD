@@ -2,15 +2,15 @@
   tags:
     - mylongtag
   script:
-    - cd $APP_DIR
-    - echo $APP_DIR
+    - cd ${APP_DIR}
+    - echo ${APP_DIR}
     - cmake . -DJOB_ID=$CI_JOB_ID
     - make
     - cd ..
-    - echo $APP_DIR
+    - echo ${APP_DIR}
   artifacts:
     paths:
-      - $APP_DIR/bin/
+      - ${APP_DIR}/bin/
 
 build_hello_world_1:
   <<: *build_template
