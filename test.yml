@@ -17,3 +17,24 @@ test_hello_world1:
   needs:
     - job: build_hello_world_1
 
+test_hello_world2:
+  extends: 
+    - .test_template
+  variables:
+    EXE_DIR: "hello_world_2"
+    NAME_OF_FILE: $EXE_DIR
+  # dependencies:
+  #   - build_hello_world_2
+  needs:
+    - job: build_hello_world_2
+
+test_hello_world3:
+  extends: 
+    - .test_template
+  variables:
+    EXE_DIR: "hello_world_3"
+    NAME_OF_FILE: $EXE_DIR
+  # dependencies:
+  #   - build_hello_world_3
+  needs:
+    - job: build_hello_world_3
