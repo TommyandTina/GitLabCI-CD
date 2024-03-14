@@ -2,8 +2,6 @@
   stage: test
   tags:
     - mylongtag
-  # dependencies:
-  #   - build_job
   script:
     - export BUILD_DIR="$CI_PROJECT_DIR/${EXE_DIR}/"
     - ${BUILD_DIR}bin/${NAME_OF_FILE}
@@ -14,3 +12,5 @@ test_hello_world1:
   variables:
     - EXE_DIR: "hello_world_1"
     - NAME_OF_FILE: ${EXE_DIR}
+  dependencies:
+    - build_hello_world_1
