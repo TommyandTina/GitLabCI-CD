@@ -1,12 +1,33 @@
-build_job:
-  stage: build
+.build_template: &build_template
   tags:
     - mylongtag
   script:
-    - mkdir build
-    - cd build
-    - cmake .. -DJOB_ID=$CI_JOB_ID
+    - cd APP_DIR
+    - cmake . -DJOB_ID=$CI_JOB_ID
     - make
+    - cd ..
   artifacts:
     paths:
-      - build/bin
+      - $APP_DIR/bin
+
+build_hello_world_1:
+  <<: *build_template
+  variables:
+    APP_DIR: "hello_world_1"
+  script:
+    - $CI_PROJECT_DIR/hello_world_1/bin/hello_world_1
+
+build_hello_world_2:
+  extends:
+    - .build_template
+  variables:
+    APP_DIR: "hello_world_2"  
+  script:
+    - $CI_PROJECT_DIR/hello_world_2/bin/hello_world_2
+
+build_hello_world_3:
+  <<: *build_template
+  variables:
+    APP_DIR: "hello_world_3"  
+  script:
+    - $CI_PROJECT_DIR/hello_world_3/bin/hello_world_3

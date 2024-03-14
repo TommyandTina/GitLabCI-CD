@@ -1,3 +1,2 @@
 include:
   - build.yml
-  - test.yml
