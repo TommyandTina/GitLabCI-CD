@@ -14,6 +14,8 @@ test_hello_world1:
     NAME_OF_FILE: $EXE_DIR
   dependencies:
     - build_hello_world_1
+    - build_hello_world_2
+    - build_hello_world_3
   # needs:
   #   - job: build_hello_world_1
   #   - job: build_hello_world_2
