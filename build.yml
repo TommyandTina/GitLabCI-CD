@@ -1,4 +1,5 @@
 .build_template: &build_template
+  stage: build
   tags:
     - mylongtag
   script:
