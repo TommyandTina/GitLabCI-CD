@@ -7,9 +7,9 @@ build_job:
     - cd build
     - cmake .. -DJOB_ID=$CI_JOB_ID
     - make
-  artifacts:
-    paths:
-      - build/bin
+  # artifacts:
+  #   paths:
+  #     - build/bin
   rules:
   - if: '$CI_PIPELINE_SOURCE == "web"'
     when: manual
