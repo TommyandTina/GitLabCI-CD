@@ -6,21 +6,27 @@
     - cmake . -DJOB_ID=$CI_JOB_ID
     - make
     - cd ..
-  artifacts:
-    paths:
-      - $APP_DIR/bin
 
 build_hello_world_1:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_1"
+  artifacts:
+    paths:
+      - $APP_DIR/bin
 
 build_hello_world_2:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_2"
-
+  artifacts:
+    paths:
+      - $APP_DIR/bin
+      
 build_hello_world_3:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_3"
+  artifacts:
+    paths:
+      - $APP_DIR/bin
