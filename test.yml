@@ -10,7 +10,7 @@
 test_hello_world1:
   <<: *test_template
   variables:
-    - EXE_DIR: "hello_world_1"
-    - NAME_OF_FILE: ${EXE_DIR}
+    EXE_DIR: "hello_world_1"
+    NAME_OF_FILE: $EXE_DIR
   dependencies:
     - build_hello_world_1
