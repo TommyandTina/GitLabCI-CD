@@ -1,5 +1,5 @@
 build_job:
-  stage: build
+  stage: build_and_test
   tags:
     - mylongtag
   script:
@@ -7,3 +7,12 @@ build_job:
     - cd build
     - cmake .. -DJOB_ID=$CI_JOB_ID
     - make
+
+test_job:
+  stage: build_and_test
+  tags:
+    - mylongtag
+  script:
+    - $CI_PROJECT_DIR/build/bin/hello_world_1
+    - $CI_PROJECT_DIR/build/bin/hello_world_2
+    - $CI_PROJECT_DIR/build/bin/hello_world_3
