@@ -32,7 +32,8 @@
 
 .build_template:
   stage: build
-
+  tags:
+    - mylongtag
   script:
     - cd ${APP_DIR}
     - mkdir build && cd build
