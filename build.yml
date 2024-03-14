@@ -2,7 +2,7 @@
   tags:
     - mylongtag
   script:
-    - cd APP_DIR
+    - cd $APP_DIR
     - cmake . -DJOB_ID=$CI_JOB_ID
     - make
     - cd ..
@@ -16,18 +16,3 @@ build_hello_world_1:
     APP_DIR: "hello_world_1"
   script:
     - $CI_PROJECT_DIR/hello_world_1/bin/hello_world_1
-
-build_hello_world_2:
-  extends:
-    - .build_template
-  variables:
-    APP_DIR: "hello_world_2"  
-  script:
-    - $CI_PROJECT_DIR/hello_world_2/bin/hello_world_2
-
-build_hello_world_3:
-  <<: *build_template
-  variables:
-    APP_DIR: "hello_world_3"  
-  script:
-    - $CI_PROJECT_DIR/hello_world_3/bin/hello_world_3
