@@ -21,9 +21,6 @@ build_hello_world_2:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_2"
-  artifacts:
-    paths:
-      - $APP_DIR/bin/
       
 build_hello_world_3:
   <<: *build_template
