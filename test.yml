@@ -3,14 +3,16 @@
   tags:
     - mylongtag
   script:
-    - export BUILD_DIR="$CI_PROJECT_DIR/${EXE_DIR}"
-    - ${BUILD_DIR}/bin/${NAME_OF_FILE}
+    - export BUILD_DIR="$CI_PROJECT_DIR/build/bin"
+    - ${BUILD_DIR}/${NAME_OF_FILE}
   # when: manual
   rules:
   - if: '$CI_PIPELINE_SOURCE == "web"'
     when: manual
   - if: '$CI_PIPELINE_SOURCE == "push"'
     when: never
+  needs:
+    - job: build_job
 
 test_hello_world1:
   <<: *test_template
@@ -19,8 +21,8 @@ test_hello_world1:
     NAME_OF_FILE: $EXE_DIR
   # dependencies:
   #   - build_hello_world_1
-  needs:
-    - job: build_hello_world_1
+  # needs:
+  #   - job: build_hello_world_1
 
 test_hello_world2:
   extends: 
@@ -30,8 +32,8 @@ test_hello_world2:
     NAME_OF_FILE: $EXE_DIR
   # dependencies:
   #   - build_hello_world_2
-  needs:
-    - job: build_hello_world_2
+  # needs:
+  #   - job: build_hello_world_2
 
 test_hello_world3:
   extends: 
@@ -41,5 +43,5 @@ test_hello_world3:
     NAME_OF_FILE: $EXE_DIR
   # dependencies:
   #   - build_hello_world_3
-  needs:
-    - job: build_hello_world_3
+  # needs:
+  #   - job: build_hello_world_3
