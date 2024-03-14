@@ -14,5 +14,3 @@ build_hello_world_1:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_1"
-  script:
-    - $CI_PROJECT_DIR/hello_world_1/bin/hello_world_1
