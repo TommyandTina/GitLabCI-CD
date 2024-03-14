@@ -3,17 +3,19 @@
     - mylongtag
   script:
     - cd $APP_DIR
+    - echo $APP_DIR
     - cmake . -DJOB_ID=$CI_JOB_ID
     - make
     - cd ..
+    - echo $APP_DIR
+  artifacts:
+    paths:
+      - $APP_DIR/bin
 
 build_hello_world_1:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_1"
-  artifacts:
-    paths:
-      - $APP_DIR/bin
 
 build_hello_world_2:
   <<: *build_template
@@ -27,6 +29,4 @@ build_hello_world_3:
   <<: *build_template
   variables:
     APP_DIR: "hello_world_3"
-  artifacts:
-    paths:
-      - $APP_DIR/bin
+
