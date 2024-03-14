@@ -1,5 +1,5 @@
 build_job:
-  stage: build_and_test
+  stage: build
   tags:
     - mylongtag
   script:
@@ -9,7 +9,7 @@ build_job:
     - make
 
 test_job:
-  stage: build_and_test
+  stage: build
   tags:
     - mylongtag
   script:
