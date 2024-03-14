@@ -9,4 +9,4 @@ build_job:
     - make
   artifacts:
     paths:
-      - build/
+      - build/bin
