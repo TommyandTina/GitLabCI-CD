@@ -18,7 +18,8 @@ build_hello_world_1:
     APP_DIR: "hello_world_1"
 
 build_hello_world_2:
-  <<: *build_template
+  extends:
+    - build_template
   variables:
     APP_DIR: "hello_world_2"
       
