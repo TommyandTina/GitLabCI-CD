@@ -16,3 +16,5 @@ test_hello_world1:
   #   - build_hello_world_1
   needs:
     - job: build_hello_world_1
+    - job: build_hello_world_2
+    - job: build_hello_world_3
